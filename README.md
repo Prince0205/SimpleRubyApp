@@ -28,4 +28,4 @@ You can deploy this app with the following easy steps:
    The Simple Ruby app should now be available in your distelli account. Click New Deployment in your account and fill in the details to start the deployment.
 
  - **Make a request** <br/>
-   Once the deployment is done, click the SimpleRubyApp in your list of applications and you should see it running on the server you deployed to. Make a request using your browser to http://<server>:8080/ and you should see the app running on your server.
+   Once the deployment is done, click the SimpleRubyApp in your list of applications and you should see it running on the server you deployed to. Make a request using your browser to http://&lt;server&gt;:8080/ and you should see the app running on your server.
