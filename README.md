@@ -4,7 +4,7 @@ SimpleRubyApp
 A simple Sinatra app with a distelli-spec.yml file that describes how this app should be deployed using the Distelli platform.
 
 ### Before you deploy
- - <a href="http://www.distelli.com/docs/setup.html>Setup the Distelli Agent</a> on the server that you want to deploy this app to
+ - <a href="http://www.distelli.com/docs/setup.html">Setup the Distelli Agent</a> on the server that you want to deploy this app to
  - <a href="http://www.distelli.com/docs/setup-cli.html">Setup the Distelli CLI</a> on your desktop machine
 
 ### Prerequisites
