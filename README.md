@@ -9,7 +9,7 @@ A simple Sinatra app with a distelli-spec.yml file that describes how this app s
 
 ### Prerequisites
 
-This rails app requires RVM which must be present on the server you're deploying to.
+This ruby app requires RVM which must be present on the server you're deploying to. If RVM is not present on your server, you can <a href="https://github.com/distelli/DistelliRVM">deploy it using the Distelli platform</a>.
 
 ### Deploying
 
@@ -19,7 +19,7 @@ You can deploy this app with the following easy steps:
     ``git clone git://github.com/distelli/SimpleRubyApp.git``
 
  - **Update the distelli-spec.yml** <br/>
-    In the distelli-spec.yml file, change the values for RVM_HOME (in th RuntimeVars and PostInstall sections)to point to the directory where rvm is installed on your server.
+    In the distelli-spec.yml file, change the values for RVM_HOME (in th RuntimeVars and PostInstall sections)to point to the directory where rvm is installed on your server. If you <a href="https://github.com/distelli/DistelliRVM">deployed RVM using distelli</a>, set the RVM_HOME to /distelli/rvm.
 
  - **Push the code to your S3 bucket using the Distelli CLI** <br/>
    ``distelli push -m "My first deployment"`` <br/>
