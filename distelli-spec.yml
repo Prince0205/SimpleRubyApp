@@ -3,7 +3,7 @@ SimpleRubyApp:
   RuntimeVars:
     - PORT: "8080"
     - DATE: "`date -u`"
-    - RVM_HOME: "/path/to/rvm"
+    - RVM_HOME: "/distelli/rvm"
   ExecCommand: 'exec ./bundle/bin/thin start $ARGS'
   RunCommands:
     - 'echo "$DATE Starting App SimpleRubyApp"'
@@ -19,7 +19,7 @@ SimpleRubyApp:
     - 'config.ru'
     - 'SimpleRubyApp.gemspec'
   PostInstall:
-    - 'RVM_HOME=/path/to/rvm'
+    - 'RVM_HOME=/distelli/rvm'
     - 'echo "Starting PostInstall for SimpleRubyApp"'
     - 'source $RVM_HOME/scripts/rvm'
     - 'rvm use 1.9.2'
