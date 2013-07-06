@@ -1,28 +1,16 @@
-SimpleRubyApp:
-  Type: Generic
-  RuntimeVars:
-    - PORT: "8080"
-    - DATE: "`date -u`"
-    - RVM_HOME: "/distelli/rvm"
-  ExecCommand: 'exec ./bundle/bin/thin start $ARGS'
-  RunCommands:
-    - 'echo "$DATE Starting App SimpleRubyApp"'
-    - 'source "$RVM_HOME/scripts/rvm"'
-    - 'rvm use 1.9.2'
-    - 'echo "Ruby Path `which ruby`"'
-  Args:
-    - '-p $PORT'
-    - '-e production'
+arrsingh/SimpleRubyApp:
+  Env:
+    - ARGS: '"-p 8080 -e production"'
+  Exec: 
+    - 'source ~/.rvm/scripts/rvm'
+    - 'rvm use 1.9.3'
+    - 'exec ./bundle/bin/thin start $ARGS'
+  PostInstall:
+    - 'source ~/.rvm/scripts/rvm'
+    - 'rvm use 1.9.3'
+    - 'bundle install --binstubs ./bundle/bin --standalone --path ./bundle/lib'
   PkgInclude:
     - 'lib/simplerubyapp/*.rb'
     - 'Gemfile'
     - 'config.ru'
     - 'SimpleRubyApp.gemspec'
-  PostInstall:
-    - 'RVM_HOME=/distelli/rvm'
-    - 'echo "Starting PostInstall for SimpleRubyApp"'
-    - 'source $RVM_HOME/scripts/rvm'
-    - 'rvm use 1.9.2'
-    - 'echo "Ruby Path `which ruby`"'
-    - 'bundle install --binstubs ./bundle/bin --standalone --path ./bundle/lib'
-    - 'echo "Finished PostInstall for SimpleRubyApp"'
