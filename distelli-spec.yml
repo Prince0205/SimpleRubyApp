@@ -1,4 +1,4 @@
-arrsingh/SimpleRubyApp:
+<username>/SimpleRubyApp:
   Env:
     - ARGS: '"-p 8080 -e production"'
   Exec: 
