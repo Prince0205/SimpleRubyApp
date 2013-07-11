@@ -8,7 +8,7 @@
   PostInstall:
     - 'source ~/.rvm/scripts/rvm'
     - 'rvm use 1.9.3'
-    - 'bundle install --binstubs ./bundle/bin --standalone --path ./bundle/lib'
+    - 'bundle install --binstubs $DISTELLI_APPHOME/bundle/bin --standalone --path $DISTELLI_APPHOME/bundle/lib'
   PkgInclude:
     - 'lib/simplerubyapp/*.rb'
     - 'Gemfile'
