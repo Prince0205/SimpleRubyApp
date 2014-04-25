@@ -1,10 +1,11 @@
 <username>/SimpleRubyApp:
   Env:
-    - ARGS: '"-p 8080 -e production"'
+    - PORT: '8080'
+    - STAGE: 'production'
   Exec: 
     - 'source ~/.rvm/scripts/rvm'
     - 'rvm use 1.9.3'
-    - 'exec ./bundle/bin/thin start $ARGS'
+    - 'exec ./bundle/bin/thin start -p $PORT -e $STAGE'
   PostInstall:
     - 'source ~/.rvm/scripts/rvm'
     - 'rvm use 1.9.3'
