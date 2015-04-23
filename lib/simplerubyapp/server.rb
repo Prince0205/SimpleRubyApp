@@ -11,6 +11,6 @@ class SimpleRubyApp < Sinatra::Base
     minutes = ((elapsed / (1000*60)) % 60)
     hours   = ((elapsed / (1000*60*60)) % 24)
 
-    "<h1>Hello World!</h1><i>Uptime: %02d:%02d:%02d" % [hours, minutes, seconds]
+    "<h1>Hello World from Distelli! You have a working Ruby application Deployment!</h1><i>Uptime: %02d:%02d:%02d" % [hours, minutes, seconds]
   end
 end
