@@ -1,7 +1,8 @@
-<username>/SimpleRubyApp:
+bmcgehee/SimpleRubyApp:
   Env:
-    - PORT: '8003'
-    - STAGE: 'production'
+    - PORT: "8003"
+    - STAGE: production
+    - HOME: /home/distelli
   PreInstall:
     # Check to see if rvm is already installed
     - if [ -a ~/.rvm/scripts/rvm ]; then
@@ -14,19 +15,20 @@
     -   curl -sSL https://get.rvm.io | bash -s stable --ruby
     - fi
     - source ~/.rvm/scripts/rvm
-    # If ruby 1.9.3 is already installed, next command won't actually re-install, so OK.
-    - rvm install ruby-1.9.3
-    - rvm use 1.9.3
+    # If ruby 2.2.2 is already installed, next command won't actually re-install, so OK.
+    - rvm install ruby-2.2.2
+    - rvm use 2.2.2
   Exec: 
-    - 'source ~/.rvm/scripts/rvm'
-    - 'rvm use 1.9.3'
-    - 'exec ./bundle/bin/thin start -p $PORT -e $STAGE'
+    - source ~/.rvm/scripts/rvm
+    - rvm use 2.2.2
+    - exec ./bundle/bin/thin start -p $PORT -e $STAGE
   PostInstall:
-    - 'source ~/.rvm/scripts/rvm'
-    - 'rvm use 1.9.3'
-    - 'bundle install --binstubs $DISTELLI_APPHOME/bundle/bin --standalone --path $DISTELLI_APPHOME/bundle/lib'
+    - source ~/.rvm/scripts/rvm
+    - rvm use 2.2.2
+    - gem install bundle
+    - bundle install --binstubs $DISTELLI_APPHOME/bundle/bin --standalone --path $DISTELLI_APPHOME/bundle/lib
   PkgInclude:
-    - 'lib/simplerubyapp/*.rb'
-    - 'Gemfile'
-    - 'config.ru'
-    - 'SimpleRubyApp.gemspec'
+    - lib/simplerubyapp/*.rb
+    - Gemfile
+    - config.ru
+    - SimpleRubyApp.gemspec
