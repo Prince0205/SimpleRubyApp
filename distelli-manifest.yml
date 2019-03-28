@@ -1,4 +1,4 @@
-bmcgehee/SimpleRubyApp:
+jamessundeep/SimpleRubyApp:
   Env:
     - PORT: "8003"
     - STAGE: production
